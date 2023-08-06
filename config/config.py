@@ -6,6 +6,8 @@ from colorama import Fore
 from dotenv import load_dotenv
 
 from config.singleton import Singleton
+from random_user_agent.user_agent import UserAgent
+from random_user_agent.params import SoftwareName, OperatingSystem
 
 load_dotenv(verbose=True)
 
@@ -30,10 +32,14 @@ class Config(metaclass=Singleton):
         self.openai_api_key = os.getenv("OPENAI_API_KEY")
         self.temperature = float(os.getenv("TEMPERATURE", "1"))
 
+        # Initialize the random user agent to avoid bot detection
+        software_names = [SoftwareName.CHROME.value]
+        operating_systems = [OperatingSystem.WINDOWS.value, OperatingSystem.LINUX.value]
+        user_agent_rotator = UserAgent(software_names=software_names, operating_systems=operating_systems, limit=100)
+
         self.user_agent = os.getenv(
             "USER_AGENT",
-            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36"
-            " (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36",
+            user_agent_rotator,
         )
 
         self.memory_backend = os.getenv("MEMORY_BACKEND", "local")

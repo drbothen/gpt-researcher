@@ -65,7 +65,6 @@ async def async_browse(url: str, question: str, websocket: WebSocket) -> str:
         return f"Error processing the url {url}: {e}"
 
 
-
 def browse_website(url: str, question: str) -> tuple[str, WebDriver]:
     """Browse a website and return the answer and links to the user
 
@@ -114,7 +113,7 @@ def scrape_text_with_selenium(url: str) -> tuple[WebDriver, str]:
     }
 
     options = options_available[CFG.selenium_web_browser]()
-    options.add_argument(CFG.user_agent)
+    options.add_argument(CFG.user_agent.get_random_user_agent())  # Set a random user agent
     options.add_argument('--headless')
 
     if CFG.selenium_web_browser == "firefox":
@@ -135,6 +134,7 @@ def scrape_text_with_selenium(url: str) -> tuple[WebDriver, str]:
             "prefs", {"download_restrictions": 3}
         )
         driver = webdriver.Chrome(options=options)
+
     driver.get(url)
 
     WebDriverWait(driver, 10).until(
