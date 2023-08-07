@@ -1,58 +1,38 @@
+/* Define animation keyframes for the gradient background effect */
 @keyframes gradientBG {
     0% {background-position: 0% 50%;}
     50% {background-position: 100% 50%;}
     100% {background-position: 0% 50%;}
 }
 
+/* Global styles for the entire document */
 body {
     font-family: 'Montserrat', sans-serif;
     color: #fff;
     line-height: 1.6;
     background-size: 200% 200%;
-    background-image: linear-gradient(45deg, #FFA500, #FF4500, #FFA500);
+    background-image: linear-gradient(45deg, #FFA500, #FF6A39, #FFA500);
     animation: gradientBG 10s ease infinite;
 }
-/*
-.landing {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
-}
 
-.landing h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-}
-
-.landing p {
-    font-size: 1.5rem;
-    font-weight: 400;
-    max-width: 500px;
-    margin: auto;
-    margin-bottom: 2rem;
-}
-
- */
-
+/* Styling for the main container */
 .container {
     max-width: 900px;
-    margin: auto;
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
     transition: all .3s ease-in-out;
-    margin-bottom: 180px;
+    margin: auto auto 100px;
 }
 
+/* Container styles when hovering */
 .container:hover {
     transform: scale(1.01);
     box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
 }
 
+/* Styling for input fields, select dropdowns, and specific elements */
 input, select, #output, #reportContainer {
     background-color: rgba(255,255,255,0.1);
     border: none;
@@ -60,6 +40,7 @@ input, select, #output, #reportContainer {
     transition: all .3s ease-in-out;
 }
 
+/* Hover and focus styles for input fields and select dropdowns */
 input:hover, input:focus, select:hover, select:focus {
     background-color: #dfe4ea;
     border: 1px solid rgba(255, 255, 255, 0.5);
@@ -67,30 +48,35 @@ input:hover, input:focus, select:hover, select:focus {
     transition: all 0.3s ease-in-out;
 }
 
+/* Primary button styles with gradient background */
 .btn-primary {
     background: linear-gradient(to right, #0062cc, #007bff);
     border: none;
     transition: all .3s ease-in-out;
 }
 
+/* Secondary button styles with gradient background */
 .btn-secondary {
     background: linear-gradient(to right, #6c757d, #6c757d);
     border: none;
     transition: all .3s ease-in-out;
 }
 
+/* Button hover effect */
 .btn:hover {
     opacity: 0.8;
     transform: scale(1.1);
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Styling for agent questions */
 .agent_question {
     font-size: 1.2rem;
     font-weight: 500;
     margin-bottom: 0.5rem;
 }
 
+/* Styling for the footer */
 footer {
     position: fixed;
     left: 0;
@@ -102,12 +88,14 @@ footer {
     padding: 10px 0;
 }
 
+/* Styling for margin dividers */
 .margin-div {
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 10px;
 }
 
+/* Styling for agent responses */
 .agent_response {
     background-color: #747d8c;
     margin: 10px;
@@ -115,6 +103,7 @@ footer {
     border-radius: 12px;
 }
 
+/* Styling for the output container */
 #output {
     height: 300px;
     overflow: auto;
@@ -123,6 +112,7 @@ footer {
     margin-top: 10px;
 }
 
+/* Styling for the report container */
 #reportContainer {
     background-color: rgba(255,255,255,0.1);
     border: none;
@@ -132,33 +122,29 @@ footer {
     border-radius: 12px;
 }
 
-/*
-.avatar {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-}
-
- */
-
+/* Styling for avatar images */
 .avatar {
     filter: invert(1) brightness(100);
 }
 
+/* Styling for agent names */
 .agent-name {
     text-align: center;
 }
 
+/* Styling for agent items */
 .agent-item {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* Styling for agent choices (currently hidden) */
 .agent-choices {
     display: none;
 }
 
+/* Styling for buttons with "btn-show" class (currently hidden) */
 .btn-show {
     display: none;
 }
