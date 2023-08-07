@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-    <title>GPT Researcher</title>
-    <meta name="description" content="A research assistant powered by GPT-4">
+    <title>1898 Research Platform</title>
+    <meta name="description" content="A research assistant powered by Generative AI">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="./static/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,39 +11,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/site/styles.css"/>
-    <style>
-        .avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-        }
-
-        .agent-name {
-            text-align: center;
-        }
-
-        .agent-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .agent-choices {
-            display: none;
-        }
-
-        .btn-show {
-            display: none;
-        }
-    </style>
 </head>
 
 <body>
 
 <main class="container" id="form">
-    <div class="agent-item"><img src="/static/defaultAgentAvatar.JPG" class="avatar"
+    <div class="agent-item"><img src="/static/1898LogoHorizontal.png" class="avatar"
                                                 alt="Auto Agent"></div>
-    <form method="POST" class="mt-3" onsubmit="GPTResearcher.startResearch(); return false;">
+    <form method="POST" class="mt-3" onsubmit="ResearchAgent.startResearch(); return false;">
         <div class="form-group">
             <label for="task" class="agent-question">What would you like me to research next?</label>
             <input type="text" id="task" name="task" class="form-control" required>
@@ -60,8 +35,8 @@
             <label for="report_type" class="agent-question">What type of report would you like me to generate?</label>
             <select name="report_type" class="form-control" required>
                 <option value="research_report">Research Report</option>
-                <option value="resource_report">Resource Report</option>
-                <option value="outline_report">Outline Report</option>
+                <!-- <option value="resource_report">Resource Report</option>
+                <option value="outline_report">Outline Report</option> -->
             </select>
         </div>
         <input type="submit" value="Research" class="btn btn-primary button-padding">
